@@ -1,0 +1,344 @@
+/* 
+    Progetto: Sito Dott.ssa Melissa Caputo
+    Stile: Moderno, Professionale, Accogliente
+*/
+
+:root {
+    --primary-blue: #1A4B9E;
+    --secondary-blue: #133a7c;
+    --accent-blue: #eef4ff;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header & Navbar */
+header {
+    background-color: var(--white);
+    border-bottom: 1px solid #eee;
+    padding: 0;
+}
+
+.navbar-brand-container {
+    padding: 1rem 0;
+}
+
+.navbar-brand-container h2 {
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+}
+
+.navbar-brand-container h5 {
+    color: var(--text-light);
+    font-weight: 400;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.navbar {
+    padding: 0.5rem 0 !important;
+    background-color: var(--white) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem !important;
+    transition: var(--transition);
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.2rem;
+    right: 1.2rem;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-blue) !important;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(26, 75, 158, 0.5), rgba(26, 75, 158, 0.5)), 
+                url('../img/sfondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    image-rendering: -webkit-optimize-contrast; /* Migliora la nitidezza sui browser moderni */
+    height: 85vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero::before {
+    display: none; /* Rimosso l'overlay vecchio */
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.citazione {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 1.5rem;
+    opacity: 0.9;
+    display: block;
+}
+
+#myButton {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+#myButton:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Sezioni Generali */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-blue);
+}
+
+/* Cards Servizi */
+.custom-card {
+    background: var(--white);
+    border: none;
+    border-radius: 15px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    opacity: 1; /* Sovrascrivo l'opacità 0 del vecchio script se necessario */
+    transform: none; /* Sovrascrivo il translate del vecchio script */
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background-color: var(--accent-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.custom-card h5 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.custom-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Sezione Presentazione */
+.intro-img-container {
+    position: relative;
+}
+
+.foto {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1/1;
+    border-radius: 30px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+.intro-content {
+    padding: 2rem;
+}
+
+.intro-content h3 {
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+#chiSono {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+#chiSono:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+footer h5 {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    color: var(--white);
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+    bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .intro-content {
+        padding: 2rem 0;
+        text-align: center;
+    }
+}
+
+/* Animazioni base */
+.fade-prepare {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
